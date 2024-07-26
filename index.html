@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #app {
+            width: 200px;
+            height: auto;
+            margin: 0;
+            background-color: rgb(238, 238, 236);
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+            display: flow-root;
+        }
+
+        /* action */
+        .action-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .el-button {
+            width: 100%;
+        }
+        .el-button + .el-button {
+            margin: 0;
+        }
+        .el-collapse-item__header {
+            padding-left: 15px;
+        }
+    </style>
+</html>

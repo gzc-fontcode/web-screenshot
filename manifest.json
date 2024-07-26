@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name": "页面截图助手",
+    "version": "1.0.0",
+    "icons": {
+        "16": "src/assets/icons/icon-16.png",
+        "48": "src/assets/icons/icon-48.png",
+        "128": "src/assets/icons/icon-128.png"
+    },
+    "action": { "default_popup": "index.html" },
+    "background": {
+        "service_worker": ["src/background/index.ts"],
+        "persistent": true
+    },
+    "options_page": "options.html",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "contextMenus",
+        "tabs",
+        "scripting",
+        "<all_urls>",
+        "downloads"
+    ],
+    "commands": {
+        "captureVisibleTab": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+S"
+            },
+            "description": "截取可见部分"
+        },
+        "captureAllTab": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+Z"
+            },
+            "description": "截取整个页面"
+        },
+        "captureAreaTab": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+X"
+            },
+            "description": "截取选定区域"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/content/index.ts"]
+        }
+    ]
+}
